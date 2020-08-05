@@ -13,7 +13,7 @@ public class Task_2 {
         String str = scanner.nextLine();
         scanner.close();
         int numberOfWords = 0;
-        Pattern pattern = Pattern.compile("\\w+");
+        Pattern pattern = Pattern.compile("\\b[A-Za-z]+\\b");
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
             numberOfWords++;

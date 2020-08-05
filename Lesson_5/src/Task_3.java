@@ -12,7 +12,7 @@ public class Task_3 {
         String str = scanner.nextLine();
         scanner.close();
         String result = "";
-        Pattern pattern = Pattern.compile("\\w+");
+        Pattern pattern = Pattern.compile("\\b[A-Za-z]+\\b");
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
             int position = matcher.end();
