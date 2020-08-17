@@ -24,9 +24,12 @@ public class Time {
     }
 
     public Time(int hours, int minutes, int seconds) {
-        this.hours = hours;
-        this.minutes = minutes;
-        this.seconds = seconds;
+        this.hours = hours + minutes / 60 + seconds / 3600;
+        minutes %= 60;
+        seconds %= 3600;
+        this.minutes = minutes + seconds / 60;
+        seconds %= 60;
+        this.seconds += seconds;
     }
 
     public int getAllSeconds() {
@@ -52,12 +55,14 @@ public class Time {
         Time second = new Time(3, 10, 5);
         Time third = new Time(3, 10, 2);
         Time fourth = second;
+        Time fifth = new Time(10, 670, 80);
 
         ArrayList<Time> array = new ArrayList<>();
         array.add(first);
         array.add(second);
         array.add(third);
         array.add(fourth);
+        array.add(fifth);
 
         for (Time i : array) {
             i.printTime();

@@ -28,7 +28,7 @@ public class Computer {
                 hardDisk + ", resources: " + resourceOfWork);
     }
 
-    public boolean randomNumber(Scanner scanner) {
+    public boolean isGuessNumber(Scanner scanner) {
         Random random = new Random();
         int randomNumber = random.nextDouble() >= 0.5 ? 1 : 0;
 //        System.out.println(randomNumber);
@@ -42,7 +42,7 @@ public class Computer {
     public void turnOn(Scanner scanner) {
         if (!isBurnt && resourceOfWork <= maxResources) {
             if (!isWork) {
-                if (randomNumber(scanner)) {
+                if (isGuessNumber(scanner)) {
                     resourceOfWork++;
                     if (resourceOfWork > maxResources) {
                         System.out.println("You have exceeded the limit. It has burnt out.");
@@ -65,7 +65,7 @@ public class Computer {
     public void turnOff(Scanner scanner) {
         if (!isBurnt && resourceOfWork <= maxResources) {
             if (isWork) {
-                if (randomNumber(scanner)) {
+                if (isGuessNumber(scanner)) {
                     resourceOfWork++;
                     if (resourceOfWork > maxResources) {
                         System.out.println("You have exceeded the limit. It has burnt out.");
