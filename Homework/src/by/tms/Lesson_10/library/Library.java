@@ -44,7 +44,7 @@ public class Library {
         System.err.println("There is no such book.");
     }
 
-    public void editBook(Book book){
+    public void editBook(Book book) {
         for (Book it : books) {
             if (it.getId() == book.getId()) {
                 it.setTitle(book.getTitle());
