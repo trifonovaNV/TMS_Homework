@@ -25,4 +25,10 @@ public class Appliances {
     public void turnOn() {
         isOn = true;
     }
+
+    @Override
+    public String toString() {
+        return "Mission: " + mission +
+                ", is on: " + (isOn ? "yes" : "no") + ", ";
+    }
 }

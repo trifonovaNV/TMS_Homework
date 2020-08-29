@@ -14,4 +14,6 @@ public class AlfabankCard extends Card {
         System.out.println("If you want to withdraw " + money + " USD. You'll get " + money * (1 - commission) + " USD.");
     }
 
+
+
 }

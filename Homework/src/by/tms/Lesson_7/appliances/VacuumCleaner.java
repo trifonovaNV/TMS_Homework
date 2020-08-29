@@ -19,7 +19,6 @@ public final class VacuumCleaner extends HouseAppliances {
 
     @Override
     public String toString() {
-        return "Mission: " + this.getMission() + ", type: " + this.getType() + ", brand: " + this.getBrand() +
-                ", is on: " + (this.getIsOn() ? "yes" : "no") + ".";
+        return super.toString() + "brand: " + brand + ".";
     }
 }

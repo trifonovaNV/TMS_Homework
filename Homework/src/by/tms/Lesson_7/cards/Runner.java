@@ -4,6 +4,8 @@ package by.tms.Lesson_7.cards;
 Создать иерархию классов, описывающих банковские карточки. Иерархия должна иметь хотя бы три уровня.
  */
 
+import java.util.Scanner;
+
 public class Runner {
 
     public static void main(String[] args) {
@@ -11,9 +13,9 @@ public class Runner {
         Card bpsCard = new BPSbankCard("Rahlina Anna");
         Card belCard = new BelarusbankCard("Berkovich Pavel");
 
-        Card foreignAlfaCard = new ForeignAlfaCard("Volovich Artyom", "RUB");
-        Card foreigBPSCard = new ForeignBPSCard("Stashenko Ksusha", "EUR");
-        Card foreignBelCard = new ForeignBelarusCard("Zalomov Daniil", "BYN");
+        ForeignAlfaCard foreignAlfaCard = new ForeignAlfaCard("Volovich Artyom", "RUB");
+        ForeignBPSCard foreigBPSCard = new ForeignBPSCard("Stashenko Ksusha", "EUR");
+        ForeignBelarusCard foreignBelCard = new ForeignBelarusCard("Zalomov Daniil", "BYN");
 
 
         Card[] cards = {alfaCard, bpsCard, belCard, foreignAlfaCard, foreigBPSCard, foreignBelCard};
@@ -29,6 +31,12 @@ public class Runner {
         foreigBPSCard.withdrawMoney(400);
         foreignAlfaCard.withdrawMoney(500);
         foreignBelCard.withdrawMoney(180);
+        System.out.println();
 
+        Scanner scanner = new Scanner(System.in);
+
+        foreignAlfaCard.chooseCurrency(scanner);
+
+        scanner.close();
     }
 }
