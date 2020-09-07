@@ -1,9 +1,6 @@
 package by.tms.Lesson_10.library;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
 
@@ -164,11 +161,15 @@ public class Application {
     }
 
     public static void fillLibrary(Library library) {
-        library.addBook(new Book(170, "Harry Potter", "fantasy"));
-        library.addBook(new Book(208, "Sherlock Holmes", "detective"));
-        library.addBook(new Book(340, "Red hood", "fairy tale"));
-        library.addBook(new Book(460, "A Scandal in Bohemia", "crime novel"));
-        library.addBook(new Book(510, "The picture of Dorian Gray", "thriller"));
-        library.addBook(new Book(600, "Dracula", "horror"));
+        library.addBook(new Book(randomID(), "Harry Potter", "fantasy"));
+        library.addBook(new Book(randomID(), "Sherlock Holmes", "detective"));
+        library.addBook(new Book(randomID(), "Red hood", "fairy tale"));
+        library.addBook(new Book(randomID(), "A Scandal in Bohemia", "crime novel"));
+        library.addBook(new Book(randomID(), "The picture of Dorian Gray", "thriller"));
+        library.addBook(new Book(randomID(), "Dracula", "horror"));
+    }
+
+    public static int randomID() {
+        return new Random().nextInt(899) + 100;
     }
 }
