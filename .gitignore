@@ -17,3 +17,6 @@
 .idea/
 .out/
 .target/
+
+*.txt
+*.kotlin_module
