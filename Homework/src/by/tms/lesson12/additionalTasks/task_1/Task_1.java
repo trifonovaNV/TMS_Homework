@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.additionalTasks.task_1;
+package by.tms.lesson12.additionalTasks.task_1;
 
 import java.io.*;
 
@@ -11,19 +11,19 @@ public class Task_1 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader("/Users/trifonovanv/Desktop/TeachMeSkills/" +
-                    "TMS_Homework/Homework/src/by/tms/Lesson_12/additionalTasks/task_1/input.txt"));
+            reader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_1/input.txt"));
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
+            reader.close();
             return;
         }
 
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter("/Users/trifonovanv/Desktop/TeachMeSkills/" +
-                    "TMS_Homework/Homework/src/by/tms/Lesson_12/additionalTasks/task_1/output.txt"));
+            writer = new BufferedWriter(new FileWriter("src/by/tms/lesson12/additionalTasks/task_1/output.txt"));
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
+            writer.close();
             return;
         }
 

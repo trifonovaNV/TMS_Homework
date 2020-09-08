@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.trainingManual;
+package by.tms.lesson12.trainingManual;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,9 +14,10 @@ public class Task_1 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader("/Users/trifonovanv/Desktop/TeachMeSkills/TMS_Homework/Homework/src/by/tms/Lesson_12/trainingManual/input.txt"));
+            reader = new BufferedReader(new FileReader("src/by/tms/lesson12/trainingManual/input.txt"));
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file.");
+            reader.close();
             return;
         }
 

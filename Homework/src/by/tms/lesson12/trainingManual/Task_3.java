@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.trainingManual;
+package by.tms.lesson12.trainingManual;
 
 import java.io.*;
 import java.util.Random;
@@ -10,10 +10,11 @@ public class Task_3 {
     public static void main(String[] args) throws IOException {
         DataOutputStream writer = null;
         try {
-            writer = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("/Users/" +
-                    "trifonovanv/Desktop/TeachMeSkills/TMS_Homework/Homework/src/by/tms/Lesson_12/trainingManual/output.dat")));
+            writer = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("src/by/tms/lesson12/" +
+                    "trainingManual/output.dat")));
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
+            writer.close();
             return;
         }
 
@@ -24,10 +25,11 @@ public class Task_3 {
 
         DataInputStream reader = null;
         try {
-            reader = new DataInputStream(new BufferedInputStream(new FileInputStream("/Users/trifonovanv/Desktop/" +
-                    "TeachMeSkills/TMS_Homework/Homework/src/by/tms/Lesson_12/trainingManual/output.dat")));
+            reader = new DataInputStream(new BufferedInputStream(new FileInputStream("src/by/tms/lesson12/" +
+                    "trainingManual/output.dat")));
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
+            reader.close();
             return;
         }
 

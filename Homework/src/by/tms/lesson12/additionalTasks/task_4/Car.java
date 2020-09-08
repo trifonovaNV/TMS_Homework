@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.additionalTasks.task_4;
+package by.tms.lesson12.additionalTasks.task_4;
 
 import java.io.Serializable;
 

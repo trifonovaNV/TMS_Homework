@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.additionalTasks.task_3;
+package by.tms.lesson12.additionalTasks.task_3;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,14 +23,32 @@ public class Runner {
      */
     public static void main(String[] args) throws IOException {
         BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/input.txt"));
+        } catch (FileNotFoundException e) {
+            System.err.println("There is no such file!");
+            reader.close();
+            return;
+        }
 
         String[] sentences = getSentences(reader);
+        reader.close();
         if (sentences == null) {
             System.err.println("There is no text file!");
             return;
         }
 
-        String[] blacklist = getBlackList(reader);
+        BufferedReader blackListReader = null;
+        try {
+            blackListReader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/blacklist.txt"));
+        } catch (FileNotFoundException e) {
+            System.err.println("There is no such file!");
+            blackListReader.close();
+            return;
+        }
+
+        String[] blacklist = getBlackList(blackListReader);
+        blackListReader.close();
         if (blacklist == null) {
             System.err.println("There is no blacklist file!");
             return;
@@ -40,39 +58,20 @@ public class Runner {
     }
 
     public static String[] getSentences(BufferedReader reader) throws IOException {
-        try {
-            reader = new BufferedReader(new FileReader("/Users/trifonovanv/Desktop/TeachMeSkills/TMS_Homework/" +
-                    "Homework/src/by/tms/Lesson_12/additionalTasks/task_3/input.txt"));
-        } catch (FileNotFoundException e) {
-            return null;
-        }
-
         String line = reader.readLine(), text = "";
         while (line != null) {
             text += line;
             line = reader.readLine();
         }
-        reader.close();
-
         return text.split("[.!?]");
     }
 
-
     public static String[] getBlackList(BufferedReader reader) throws IOException {
-        try {
-            reader = new BufferedReader(new FileReader("/Users/trifonovanv/Desktop/TeachMeSkills/TMS_Homework/" +
-                    "Homework/src/by/tms/Lesson_12/additionalTasks/task_3/blacklist.txt"));
-        } catch (FileNotFoundException e) {
-            return null;
-        }
-
         String line = reader.readLine(), text = "";
         while (line != null) {
             text += line;
             line = reader.readLine();
         }
-        reader.close();
-
         return text.split("[,]");
     }
 

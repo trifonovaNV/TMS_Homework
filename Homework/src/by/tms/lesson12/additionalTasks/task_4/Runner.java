@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.additionalTasks.task_4;
+package by.tms.lesson12.additionalTasks.task_4;
 
 import java.io.*;
 
@@ -11,8 +11,7 @@ public class Runner {
         Car car = new Car("Porshe", 200, 100000);
         ObjectOutputStream out = null;
         try {
-            out = new ObjectOutputStream(new FileOutputStream("/Users/trifonovanv/Desktop/TeachMeSkills/TMS_Homework/Homework/src/" +
-                    "by/tms/Lesson_12/additionalTasks/task_4/output.dat"));
+            out = new ObjectOutputStream(new FileOutputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"));
             out.writeObject(car);
             out.close();
         } catch (IOException ex) {
@@ -23,8 +22,7 @@ public class Runner {
         Car newCar = null;
         ObjectInputStream in = null;
         try {
-            in = new ObjectInputStream(new FileInputStream("/Users/trifonovanv/Desktop/TeachMeSkills/TMS_Homework/Homework/src/" +
-                    "by/tms/Lesson_12/additionalTasks/task_4/output.dat"));
+            in = new ObjectInputStream(new FileInputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"));
             newCar = (Car) in.readObject();
             in.close();
         } catch (IOException | ClassNotFoundException ex) {

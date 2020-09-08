@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.trainingManual;
+package by.tms.lesson12.trainingManual;
 
 import java.io.File;
 import java.util.ArrayList;

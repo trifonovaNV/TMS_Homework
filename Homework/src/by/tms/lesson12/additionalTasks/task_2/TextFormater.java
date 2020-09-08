@@ -1,4 +1,4 @@
-package by.tms.Lesson_12.additionalTasks.task_2;
+package by.tms.lesson12.additionalTasks.task_2;
 
 public class TextFormater {
 
