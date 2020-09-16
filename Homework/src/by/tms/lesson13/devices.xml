@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<devices>
+    <Device Batch="700441" ID="a95">
+        <Name>new Device</Name>
+        <Origin>USA</Origin>
+        <Price>1200</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <Energy>40</Energy>
+            <Cooler>true</Cooler>
+            <Group>multimedia devices</Group>
+            <Ports>USB</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Device>
+</devices>

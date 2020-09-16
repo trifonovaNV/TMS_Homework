@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Device" maxOccurs="unbounded">
+                    <xs:complexType>
+
+                        <xs:sequence>
+                            <xs:element name="Name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="40"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Origin">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="40"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Price">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:maxInclusive value="100000"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="Type" maxOccurs="unbounded">
+
+                                <xs:complexType>
+
+                                    <xs:sequence>
+                                        <xs:element name="Peripheral">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:boolean"/>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Energy">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:maxInclusive value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Cooler">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:boolean"/>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Group">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="input or output devices"/>
+                                                    <xs:enumeration value="multimedia devices"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="Ports">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="COM"/>
+                                                    <xs:enumeration value="USB"/>
+                                                    <xs:enumeration value="LPT"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+
+                                </xs:complexType>
+
+                            </xs:element>
+
+                            <xs:element name="Critical">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:boolean"/>
+                                </xs:simpleType>
+                            </xs:element>
+
+                        </xs:sequence>
+                        <xs:attribute name="ID" type="xs:ID"/>
+                        <xs:attribute name="Batch" default="000000">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="6"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
