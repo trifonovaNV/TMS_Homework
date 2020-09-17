@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<books>
+
+    <Book ID="100">
+        <Name>Harry Potter</Name>
+        <Author>J.K. Rowling</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>false</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="110">
+        <Name>The Adventures of Sherlock Holmes</Name>
+        <Author>Arthur Conan Doyle</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>false</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="120">
+        <Name>Three Men in a Boat</Name>
+        <Author>Jerome K. Jerome</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>false</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="130">
+        <Name>Jane Eyre</Name>
+        <Author>Charlotte Bronte</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>true</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="140">
+        <Name>Bridget Jones’ Diary</Name>
+        <Author>Helen Fielding</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>false</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="150">
+        <Name>To Kill a Mockingbird</Name>
+        <Author>Harper Lee</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>false</IsOnlyReadingRoom>
+    </Book>
+    <Book ID="160">
+        <Name>Hitchhiker’s Guide to the Galaxy</Name>
+        <Author>Douglas Adams</Author>
+        <IsAvailable>true</IsAvailable>
+        <IsOnlyReadingRoom>true</IsOnlyReadingRoom>
+    </Book>
+</books>
