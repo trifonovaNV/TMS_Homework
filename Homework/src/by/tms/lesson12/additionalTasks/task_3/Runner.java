@@ -22,35 +22,19 @@ public class Runner {
     подлежащие исправлению.
      */
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/input.txt"));
+        String[] sentences;
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/input.txt"))) {
+            sentences = getSentences(reader);
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
-            reader.close();
             return;
         }
 
-        String[] sentences = getSentences(reader);
-        reader.close();
-        if (sentences == null) {
-            System.err.println("There is no text file!");
-            return;
-        }
-
-        BufferedReader blackListReader = null;
-        try {
-            blackListReader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/blacklist.txt"));
+        String[] blacklist;
+        try (BufferedReader blackListReader = new BufferedReader(new FileReader("src/by/tms/lesson12/additionalTasks/task_3/blacklist.txt"))){
+            blacklist = getBlackList(blackListReader);
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file!");
-            blackListReader.close();
-            return;
-        }
-
-        String[] blacklist = getBlackList(blackListReader);
-        blackListReader.close();
-        if (blacklist == null) {
-            System.err.println("There is no blacklist file!");
             return;
         }
 
