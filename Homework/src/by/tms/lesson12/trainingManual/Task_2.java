@@ -15,27 +15,21 @@ public class Task_2 {
      убрать все повторяющиеся числа и снова распечатать.
      */
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader("src/by/tms/lesson12/trainingManual/input.txt"));
+        List<Integer> numbers = new ArrayList<Integer>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/by/tms/lesson12/trainingManual/input.txt"))) {
+            String line = reader.readLine();
+            while (line != null) {
+                Pattern pattern = Pattern.compile("\\d+");
+                Matcher matcher = pattern.matcher(line);
+                while (matcher.find()) {
+                    numbers.add(Integer.parseInt(line.substring(matcher.start(), matcher.end())));
+                }
+                line = reader.readLine();
+            }
         } catch (FileNotFoundException e) {
             System.err.println("There is no such file.");
-            reader.close();
             return;
         }
-
-        List<Integer> numbers = new ArrayList<Integer>();
-
-        String line = reader.readLine();
-        while (line != null) {
-            Pattern pattern = Pattern.compile("\\d+");
-            Matcher matcher = pattern.matcher(line);
-            while (matcher.find()) {
-                numbers.add(Integer.parseInt(line.substring(matcher.start(), matcher.end())));
-            }
-            line = reader.readLine();
-        }
-        reader.close();
 
         int sum = 0;
         System.out.println("All numbers: ");

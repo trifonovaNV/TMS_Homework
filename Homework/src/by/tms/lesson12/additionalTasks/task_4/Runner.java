@@ -9,24 +9,20 @@ public class Runner {
      */
     public static void main(String[] args) {
         Car car = new Car("Porshe", 200, 100000);
-        ObjectOutputStream out = null;
-        try {
-            out = new ObjectOutputStream(new FileOutputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"));
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"))) {
             out.writeObject(car);
-            out.close();
         } catch (IOException ex) {
             ex.printStackTrace();
+            return;
         }
         System.out.println("Original car - " + car);
 
         Car newCar = null;
-        ObjectInputStream in = null;
-        try {
-            in = new ObjectInputStream(new FileInputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"));
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("src/by/tms/lesson12/additionalTasks/task_4/output.dat"))) {
             newCar = (Car) in.readObject();
-            in.close();
         } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
+            return;
         }
         System.out.println("New car - " + newCar);
     }
